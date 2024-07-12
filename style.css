@@ -333,6 +333,12 @@ p {
   text-align: center;
 }
 
+/* MEDIA QUERIES */
+/* https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
+/* Some of the emojis have the wrong positions on mobile. Looks fine tho */
+
+
+
 @media screen and (max-width: 768px) {
   .invitation {
     width: 100%;
@@ -354,6 +360,14 @@ p {
 
   h2 {
     font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .footer {
+    margin-top: -60px;
   }
 
   p {

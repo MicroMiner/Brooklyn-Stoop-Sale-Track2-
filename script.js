@@ -29,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const shareButtons = document.querySelectorAll(".share-btn");
   const url = encodeURIComponent(window.location.href);
-  const text = encodeURIComponent(
-    "Join us for Lil and Chelsea's Stoop Sale! @ "
-  );
+  const text = "Join us for Lil and Chelsea's Stoop Sale! @ ";
 
   mapToggle.addEventListener("click", function () {
     if (
@@ -121,7 +119,7 @@ function initMap() {
   L.marker([40.6795, -73.99729], { icon: customIcon })
     .addTo(map)
     .bindPopup(
-      "<b>Lil and Chelseas Stoop Sale 💫</b><br>2nd Pl and Court St, Brooklyn"
+      "<b>✨ Lil and Chelseas Stoop Sale ✨</b><br>2nd Pl and Court St, Brooklyn"
     )
     .openPopup();
 
