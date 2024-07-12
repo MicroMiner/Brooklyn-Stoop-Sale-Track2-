@@ -79,11 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.5;
-    backgroundMusic.play().catch((error) => {
-      console.log(
-        "Autoplay prevented. User interaction required to play music."
-      );
-    });
+    
+    setTimeout(() => {
+      backgroundMusic.play().then(() => {
+        console.log("Music started playing");
+      }).catch((error) => {
+        console.log("Autoplay still prevented:", error);
+      });
+    }, 1000);
   });
 });
 
