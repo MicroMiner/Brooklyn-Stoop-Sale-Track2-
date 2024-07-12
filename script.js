@@ -1,5 +1,4 @@
-let index = 0,
-  interval = 3700;
+let index = 0, interval = 3700;
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
