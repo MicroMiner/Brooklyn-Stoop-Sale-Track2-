@@ -79,16 +79,21 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.5;
-    
+  
     setTimeout(() => {
-      backgroundMusic.play().then(() => {
-        console.log("Music started playing");
-      }).catch((error) => {
-        console.log("Autoplay still prevented:", error);
+      backgroundMusic.play().catch((error) => {
+        console.log("Autoplay prevented. Waiting for user interaction.");
       });
     }, 1000);
+  
+    document.body.addEventListener("click", function() {
+      backgroundMusic.play().catch((error) => {
+        console.log("Playback failed:", error);
+      });
+    }, { once: true });
   });
 });
+
 
 function initMap() {
   const map = L.map("map", {
