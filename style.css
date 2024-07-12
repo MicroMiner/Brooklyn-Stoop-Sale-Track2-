@@ -1,0 +1,363 @@
+@font-face {
+  font-family: 'Comic Pillow';
+  src: url('assets/font/Comic Pillow.otf') format('opentype');
+}
+
+:root {
+  --primary: #FFCC80;
+  --secondary: #FFCC66;
+  --accent: #FFB84D;
+  --text: #333333;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from, to {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scroll {
+  from { background-position: 0 0, 50px 50px, 50px 0; }
+  to { background-position: -100px -100px, -50px -50px, -50px -100px; }
+}
+
+body {
+  font-family: 'Comic Pillow', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #333333;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #FFE0AF;
+  background-image:
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88), 
+  linear-gradient(45deg, #FFDD88 25%, transparent 25%, transparent 75%, #FFDD88 75%, #FFDD88),
+  linear-gradient(45deg, transparent, transparent 50%, #FFC87F 50%, #FFC87F);
+  background-size: 100px 100px;
+  background-position: 0 0, 50px 50px, 50px 0px;
+  animation: scroll 5s linear infinite;
+}
+
+.invitation {
+  width: 230mm;
+  height: 100vh;
+  background-color: #f3f1ee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #FFDD88;
+}
+
+h2.magic {
+  display: inline-block;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+h2.magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+h2.magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+h2.magic > .magic-star > svg > path {
+  fill: var(--accent);
+}
+
+h2.magic > .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--accent),
+    var(--primary)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+p {
+  font-size: 24px;
+  margin: 15px 0;
+  color: #333333;
+  position: relative;
+  display: inline-block;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.left-info, .right-info {
+  width: 45%;
+}
+
+.left-info {
+  text-align: left;
+}
+
+.right-info {
+  text-align: right;
+}
+
+.details {
+  font-size: 20px;
+}
+
+#map {
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 300px;
+}
+
+.map-toggle {
+  color: #FFCC66;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.map-toggle:hover {
+  color: #FFDD88;
+}
+
+.selling-section {
+  margin-top: 40px;
+}
+
+.header {
+  position: relative;
+  display: inline-block;
+}
+
+.emoji-sell {
+  position: absolute;
+  font-size: 1.1em;
+  top: 0.65em;
+  right: -0.72em;
+  display: inline-block;
+  z-index: 1;
+  transform: rotate(260deg);
+  transition: transform 0.3s ease;
+}
+
+.emoji-build {
+  position: absolute;
+  font-size: 0.9em;
+  top: -0.96em;
+  right: 3.5em;
+  display: inline-block;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.emoji-where {
+  position: absolute;
+  font-size: 2.3em;
+  top: -1.05em;
+  right: -0.75em;
+  display: inline-block;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
+.emoji-yoyo {
+  position: absolute;
+  font-size: 0.89em;
+  top: 2.2em;
+  right: 5.35em;
+  display: inline-block;
+  z-index: 1;
+  transform: rotate(-30deg);
+}
+
+.emoji-ppl {
+  position: absolute;
+  font-size: 1.1em;
+  top: -0.95em;
+  right: 11.25em;
+  display: inline-block;
+  z-index: 1;
+  transform: rotate(10deg);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.share-btn:hover {
+  transform: scale(1.1);
+}
+
+.facebook {
+  background-color: #3b5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.whatsapp {
+  background-color: #25d366;
+  color: white;
+}
+
+.copy-link {
+  background-color: #6c757d;
+  color: white;
+}
+
+.footer {
+  font-size: 14px;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .invitation {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .left-info, .right-info {
+    width: 100%;
+    text-align: left;
+  }
+
+  .right-info {
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .details {
+    font-size: 16px;
+  }
+
+  .map-toggle {
+    display: block;
+    margin-top: 10px;
+  }
+
+  #map {
+    height: 200px;
+  }
+
+  .selling-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .selling-section .right-info {
+    order: -1;
+    margin-bottom: 10px;
+  }
+  
+  .selling-section .left-info,
+  .selling-section .right-info {
+    text-align: left;
+  }
+}

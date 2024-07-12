@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brooklyn Stoop Sale Invitation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="invitation">
+        <h2 class="magic">
+          <span class="magic-star">
+            <svg viewBox="0 0 512 512">
+              <path
+                d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+              />
+            </svg>
+          </span>
+          <span class="magic-star">
+            <svg viewBox="0 0 512 512">
+              <path
+                d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+              />
+            </svg>
+          </span>
+          <span class="magic-star">
+            <svg viewBox="0 0 512 512">
+              <path
+                d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+              />
+            </svg>
+          </span>
+          <span class="magic-text">Lil and Chelsea's Stoop Sale!</span>
+        </h2>
+        <div class="info-container">
+          <div class="left-info">
+            <p class="header">
+                Where & when?<span class="emoji-where">📍</span>
+              </p>
+          </div>
+          <div class="right-info">
+            <p class="details">
+              24th July 2024, 8am-2pm @ Carrol Gardens, 2nd Pl. and Court St in
+              Brooklyn!
+            </p>
+            <p class="details">
+                We'll make sure to setup<span class="emoji-build">🏗️</span> our
+                lil sale asap!~
+            </p>
+            <p class="map-toggle">Click here for directions!</p>
+
+            <div
+              id="map"
+              class="map-container"
+              style="
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease-out;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="info-container selling-section">
+          <div class="left-info">
+            <p class="details">
+                We're selling all sorts of treasures! From vintage clothes to
+                quirky knick-knacks<span class="emoji-yoyo">🪀</span>, you'll find
+              it all at our stoop sale, promised! There'll be good quality, tasteful things for sale.
+            </p>
+          </div>
+          <div class="right-info">
+            <p class="header">
+                What are you selling?<span class="emoji-sell">🏷️</span>
+            </p>              
+          </div>
+        </div>
+        <p class="header">Now... will you come?</p>
+        <p class="details">
+            If you want, share this with your friends<span class="emoji-ppl">👥</span>
+            and bring them along!
+        </p>
+        <div class="share-buttons">
+          <button class="share-btn facebook" aria-label="Share on Facebook">
+            <i data-lucide="facebook"></i>
+          </button>
+          <button class="share-btn twitter" aria-label="Share on Twitter">
+            <i data-lucide="twitter"></i>
+          </button>
+          <button class="share-btn whatsapp" aria-label="Share on WhatsApp">
+            <i data-lucide="message-circle"></i>
+          </button>
+          <button class="share-btn copy-link" aria-label="Copy Link">
+            <i data-lucide="link"></i>
+          </button>
+        </div>
+        <footer>
+            <p class="footer">Made with ❤️ by Team TripleBit for <a href="https://www.codedex.io/hackathon">Codedex's Summer Hackathon</a></p>
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <audio id="backgroundMusic" loop>
+      <source src="assets/music/dentists-office-music.mp3" type="audio/mpeg" />
+    </audio>
+  </body>
+</html>
